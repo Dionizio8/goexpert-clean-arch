@@ -1,4 +1,4 @@
-# Modulo: Clean Arch [go-expert]
+# Módulo: Clean Arch *[go-expert]*
 
 ## Descrição
 
