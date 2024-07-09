@@ -41,3 +41,8 @@ cd cmd/ordersystem
 ```bash
 go run main.go wire_gen.go
 ```
+```
+Starting web server on port :8000
+Starting gRPC server on port 50051
+Starting GraphQL server on port 8080
+```
