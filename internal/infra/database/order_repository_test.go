@@ -49,3 +49,11 @@ func (suite *OrderRepositoryTestSuite) TestGivenAnOrder_WhenSave_ThenShouldSaveO
 	suite.Equal(order.Tax, orderResult.Tax)
 	suite.Equal(order.FinalPrice, orderResult.FinalPrice)
 }
+
+func (suite *OrderRepositoryTestSuite) TestGetOrder_WhenGet_TheShouldFindAllOrder() {
+	suite.Db.Exec("INSERT INTO orders (id, price, tax, final_price) VALUES ('abc', 10, 10, 20)")
+	repo := NewOrderRepository(suite.Db)
+	orders, err := repo.FindAll()
+	suite.NoError(err)
+	suite.True(len(orders) > 0)
+}

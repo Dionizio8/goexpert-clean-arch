@@ -8,8 +8,8 @@ type ListOrderUseCase struct {
 	OrderRepository entity.OrderRepositoryInterface
 }
 
-func NewListOrderUseCase(OrderRepository entity.OrderRepositoryInterface) ListOrderUseCase {
-	return ListOrderUseCase{OrderRepository: OrderRepository}
+func NewListOrderUseCase(OrderRepository entity.OrderRepositoryInterface) *ListOrderUseCase {
+	return &ListOrderUseCase{OrderRepository: OrderRepository}
 }
 
 func (l *ListOrderUseCase) Execute() ([]OrderOutputDTO, error) {
