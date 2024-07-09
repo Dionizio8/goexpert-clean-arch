@@ -42,9 +42,9 @@ func (r *queryResolver) ListOrders(ctx context.Context) ([]*model.Order, error) 
 	for _, order := range orders {
 		output = append(output, &model.Order{
 			ID:         order.ID,
-			Price:      order.Price,
-			Tax:        order.Tax,
-			FinalPrice: order.FinalPrice,
+			Price:      float64(order.Price),
+			Tax:        float64(order.Tax),
+			FinalPrice: float64(order.FinalPrice),
 		})
 	}
 	return output, nil
