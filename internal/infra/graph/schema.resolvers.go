@@ -8,12 +8,11 @@ import (
 	"context"
 
 	"github.com/Dionizio8/goexpert-clean-arch/internal/infra/graph/model"
-	model1 "github.com/Dionizio8/goexpert-clean-arch/internal/infra/graph/model"
 	"github.com/Dionizio8/goexpert-clean-arch/internal/usecase"
 )
 
 // CreateOrder is the resolver for the createOrder field.
-func (r *mutationResolver) CreateOrder(ctx context.Context, input *model1.OrderInput) (*model1.Order, error) {
+func (r *mutationResolver) CreateOrder(ctx context.Context, input *model.OrderInput) (*model.Order, error) {
 	dto := usecase.OrderInputDTO{
 		ID:    input.ID,
 		Price: float64(input.Price),
@@ -32,8 +31,8 @@ func (r *mutationResolver) CreateOrder(ctx context.Context, input *model1.OrderI
 	}, nil
 }
 
-// Orders is the resolver for the orders field.
-func (r *queryResolver) Orders(ctx context.Context) ([]*model1.Order, error) {
+// ListOrders is the resolver for the ListOrders field.
+func (r *queryResolver) ListOrders(ctx context.Context) ([]*model.Order, error) {
 	orders, err := r.ListOrderUseCase.Execute()
 	if err != nil {
 		return nil, err
