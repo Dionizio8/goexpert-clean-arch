@@ -22,7 +22,7 @@ Inclua um README.md com os passos a serem executados no desafio e a porta em que
 docker-compose up -d 
 ```
 
-3. No [RabbitMQ](http://localhost:15672/]) criar em **Queues and Streams** a fila com nome *orders* e o Binding *amq.direct*
+2. No [RabbitMQ](http://localhost:15672/]) criar em **Queues and Streams** a fila com nome *orders* e o Binding *amq.direct*
 
 ### Start aplicação
 ```bash
