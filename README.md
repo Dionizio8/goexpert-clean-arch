@@ -13,7 +13,7 @@ Para a criação do banco de dados, utilize o Docker (Dockerfile / docker-compos
 Inclua um README.md com os passos a serem executados no desafio e a porta em que a aplicação deverá responder em cada serviço.
 
 ## Como executar
-*Será necessário criar a tabela **orders** no Myqsl e criar a fila **orders** no RabbitMQ para realizar os testes local.*
+*Será necessário criar a fila **orders** no RabbitMQ para realizar os testes local.*
 
 ### Configurando 
 
@@ -21,17 +21,7 @@ Inclua um README.md com os passos a serem executados no desafio e a porta em que
 ```bash
 docker-compose up -d 
 ```
-2. criar a tabela *order* para testes locais
-```bash
-docker exec -it mysql /bin/bash
-```
-*  **MYSQL_ROOT_PASSWORD**: *root* 
-```bash
-mysql -uroot -p orders
-```
-```bash
-CREATE TABLE orders (id VARCHAR(255) NOT NULL, price FLOAT NOT NULL, tax FLOAT NOT NULL, final_price FLOAT NOT NULL, PRIMARY KEY (id));
-```
+
 3. No [RabbitMQ](http://localhost:15672/]) criar em **Queues and Streams** a fila com nome *orders* e o Binding *amq.direct*
 
 ### Start aplicação
